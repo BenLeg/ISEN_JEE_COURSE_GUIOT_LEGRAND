@@ -1,0 +1,18 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>QuoteServlet</servlet-name>
+        <servlet-class>yncrea.lab02.web.QuoteServlet</servlet-class>
+        <init-param>
+            <param-name>providerClass</param-name>
+            <param-value>yncrea.lab02.provider.CNFProvider</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuoteServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
