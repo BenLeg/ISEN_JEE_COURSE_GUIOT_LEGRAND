@@ -1,17 +1,24 @@
 package yncrea.lab03.core.entity;
 
-import javax.persistence.Entity;
+import sun.awt.geom.AreaOp;
+
+import javax.persistence.*;
 
 //TODO annotate this entity
 @Entity
 public class Project {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
+    @Column
     private String name;
 
+    @ManyToOne
     private Company company;
 
+    @ManyToOne
     private Customer customer;
 
 

@@ -2,16 +2,22 @@ package yncrea.lab03.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
 import java.util.List;
 
 //TODO annotate this entity
+@Entity
 @JsonIgnoreProperties(value = { "projects" })
 public class Company {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
+    @Column
     private String name;
 
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "company")
     private List<Project> projects;
 
 
