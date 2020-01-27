@@ -2,21 +2,18 @@ package yncrea.lab03.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 @JsonIgnoreProperties(value = { "projects" })
-public class Customer {
+public class Customer extends GenericEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
-
-    @Column
     private String name;
 
-    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "customer")
+    @OneToMany(mappedBy = "customer")
     private List<Project> projects;
 
     @ManyToOne
@@ -24,16 +21,6 @@ public class Customer {
 
 
     public Customer() {
-    }
-
-
-    public long getId() {
-        return id;
-    }
-
-
-    public void setId(final long idValue) {
-        id = idValue;
     }
 
 

@@ -2,34 +2,46 @@ package yncrea.lab03.core.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import yncrea.lab03.core.dao.CompanyDAO;
 import yncrea.lab03.core.entity.Company;
 
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 @Service
 @Transactional
 public class CompanyService {
-    //TODO inject a DAO
+
+    private CompanyDAO companyDAO;
+
+
+    public CompanyService(final CompanyDAO companyDAO) {
+        this.companyDAO = companyDAO;
+    }
 
 
     public void deleteAll() {
-        //TODO implement
+        companyDAO.deleteAll();
     }
 
 
     public void save(final Company company) {
-        //TODO implement
+        companyDAO.save(company);
     }
 
 
     public long countAll() {
-        //TODO implement
-        return 0;
+        return companyDAO.count();
     }
 
 
     public Map<String, Integer> getAllWithProjectCount() {
-        //TODO return a map with the name of the company for the key and the count in the value
-       return null;
+        Map<String,Integer> projectCount = new TreeMap<>();
+        final List<Company> companies = companyDAO.findAllWithProjects();
+        for(Company company:companies){
+            projectCount.put(company.getName(),company.getProjects().size());
+        }
+        return projectCount;
     }
 }

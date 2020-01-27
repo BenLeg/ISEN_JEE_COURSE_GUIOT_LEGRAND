@@ -1,17 +1,11 @@
 package yncrea.lab03.core.entity;
 
-import sun.awt.geom.AreaOp;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Project {
+public class Project extends GenericEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
-
-    @Column
     private String name;
 
     @ManyToOne
@@ -22,16 +16,6 @@ public class Project {
 
 
     public Project() {
-    }
-
-
-    public long getId() {
-        return id;
-    }
-
-
-    public void setId(final long idValue) {
-        id = idValue;
     }
 
 
