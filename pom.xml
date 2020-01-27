@@ -9,7 +9,9 @@
 		<module>lab02-webapp</module>
 		<module>lab02-springapp</module>
 		<module>lab02-fxapp</module>
-	</modules>
+		<module>lab02-core</module>
+        <module>lab02-app</module>
+    </modules>
     <packaging>pom</packaging>
 
 	<properties>

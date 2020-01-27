@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import yncrea.lab02.fx.yncrea.lab02.gateway.QuoteGateway;
 import yncrea.lab02.gateway.QuoteGateway;
 
 public class FXApplication extends Application {
