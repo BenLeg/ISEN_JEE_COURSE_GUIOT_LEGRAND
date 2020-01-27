@@ -1,27 +1,52 @@
 package yncrea.lab01.model;
 
+import java.util.Objects;
+
 public class Pharmacist {
-    private String pharmacistId;
-    private String pharmacistPassword;
 
-    public Pharmacist(String pharmacistId, String pharmacistPassword) {
-        this.pharmacistId = pharmacistId;
-        this.pharmacistPassword = pharmacistPassword;
+    private String login;
+
+    private String password;
+
+
+    public Pharmacist(final String login, final String password) {
+        this.login = login;
+        this.password = password;
     }
 
-    public String getPharmacistId() {
-        return pharmacistId;
+
+    public String getLogin() {
+        return login;
     }
 
-    public void setPharmacistId(String pharmacistId) {
-        this.pharmacistId = pharmacistId;
+
+    public void setLogin(final String loginValue) {
+        login = loginValue;
     }
 
-    public String getPharmacistPassword() {
-        return pharmacistPassword;
+
+    public String getPassword() {
+        return password;
     }
 
-    public void setPharmacistPassword(String pharmacistPassword) {
-        this.pharmacistPassword = pharmacistPassword;
+
+    public void setPassword(final String passwordValue) {
+        password = passwordValue;
+    }
+
+
+    @Override public boolean equals(final Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Pharmacist))
+            return false;
+        final Pharmacist that = (Pharmacist) o;
+        return getLogin().equals(that.getLogin()) &&
+                getPassword().equals(that.getPassword());
+    }
+
+
+    @Override public int hashCode() {
+        return Objects.hash(getLogin(), getPassword());
     }
 }
