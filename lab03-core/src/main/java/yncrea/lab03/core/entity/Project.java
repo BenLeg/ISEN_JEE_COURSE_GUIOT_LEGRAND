@@ -4,7 +4,6 @@ import sun.awt.geom.AreaOp;
 
 import javax.persistence.*;
 
-//TODO annotate this entity
 @Entity
 public class Project {
 
