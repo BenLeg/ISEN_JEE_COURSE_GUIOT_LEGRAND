@@ -32,7 +32,7 @@ public class CompanyController {
         return "companiesList";
     }
 
-    @RequestMapping(path = "{id}/delete",method = RequestMethod.DELETE)
+    @RequestMapping(path = "{id}/delete",method = RequestMethod.GET)
     public String deleteOneCompany(@PathVariable Long id){
         companyService.deleteById(id);
         LOGGER.debug("The company has been deleted from the database");
