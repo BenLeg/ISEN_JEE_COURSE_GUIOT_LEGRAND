@@ -29,13 +29,14 @@ public class CompanyController {
     public String getListOfCompanies(ModelMap modelMap){
         final List<Company> allCompanyWithProjects = companyService.findAllWithProjects();
         modelMap.addAttribute("companies",allCompanyWithProjects);
+        LOGGER.info("The company has been displayed on the view.");
         return "companiesList";
     }
 
     @RequestMapping(path = "{id}/delete",method = RequestMethod.GET)
     public String deleteOneCompany(@PathVariable Long id){
         companyService.deleteById(id);
-        LOGGER.debug("The company has been deleted from the database");
+        LOGGER.debug("The company has been deleted from the database.");
         return "redirect:/list";
     }
 }
