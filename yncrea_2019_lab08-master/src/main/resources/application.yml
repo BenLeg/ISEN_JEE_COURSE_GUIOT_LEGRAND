@@ -1,0 +1,22 @@
+server:
+  port: 8181
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/yncrea_pw03
+info:
+  app:
+    name: PW07
+    java:
+      version: 1.8
+    credits:
+      authors:
+        - Awesome student 1
+        - Awesome student 2
+      year: 2018
+
+endpoints:
+  sensitive: false
+
+
