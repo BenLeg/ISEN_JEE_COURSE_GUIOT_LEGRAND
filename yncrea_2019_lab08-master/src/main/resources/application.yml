@@ -1,10 +1,11 @@
 server:
-  port: 8181
+  port: 9292
+
 spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/yncrea_pw03
+    url: jdbc:mysql://localhost:3306/studentdb
 info:
   app:
     name: PW07
@@ -12,9 +13,9 @@ info:
       version: 1.8
     credits:
       authors:
-        - Awesome student 1
-        - Awesome student 2
-      year: 2018
+        - Amazing Benjamin Legrand
+        - Boring Jules Guiot
+      year: 2020
 
 endpoints:
   sensitive: false
