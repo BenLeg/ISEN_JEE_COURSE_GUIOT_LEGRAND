@@ -1,5 +1,6 @@
 package yncrea.lab06.core.entity;
 
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -11,6 +12,9 @@ import java.util.Set;
 // Hint 2 : https://tomee.apache.org/examples-trunk/jpa-enumerated/
 
 public class Book implements Comparable<Book> {
+
+    @Id
+    private Long id;
 
     private String title;
 

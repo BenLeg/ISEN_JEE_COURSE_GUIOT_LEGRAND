@@ -2,11 +2,15 @@ package yncrea.lab06.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
 
 // TODO complete this implementation with the correct annotations, fields and methods.
 public class Review implements Comparable<Review> {
+
+    @Id
+    private Long id;
 
     private int score;
 

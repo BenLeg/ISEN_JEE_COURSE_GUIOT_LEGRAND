@@ -2,6 +2,7 @@ package yncrea.lab06.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
 
@@ -11,6 +12,9 @@ import java.util.List;
 
 @JsonIgnoreProperties({ "books" })
 public class Author implements Comparable<Author> {
+
+    @Id
+    private Long id;
 
     private String firstname;
 
