@@ -6,8 +6,6 @@ public class Slide {
     private int indexh;
     private int indexs;
 
-    public Slide() {
-    }
 
     public int getIndexv() {
         return indexv;

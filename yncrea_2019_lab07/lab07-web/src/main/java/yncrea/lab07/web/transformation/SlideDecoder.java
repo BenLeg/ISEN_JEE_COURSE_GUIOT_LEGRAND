@@ -20,17 +20,17 @@ public class SlideDecoder implements Decoder.Text<Slide> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return slide;
+        return this.slide;
     }
 
     @Override
     public boolean willDecode(String s) {
-        return false;
+        return true;
     }
 
     @Override
     public void init(EndpointConfig endpointConfig) {
-        objectMapper = new ObjectMapper();
+        this.objectMapper = new ObjectMapper();
     }
 
     @Override

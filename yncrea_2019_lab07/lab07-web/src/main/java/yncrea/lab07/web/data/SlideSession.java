@@ -8,12 +8,15 @@ public class SlideSession {
 
     private Session session;
 
-    public SlideSession(Session s) {
+    public SlideSession(Session session) {
+        this.session = session;
     }
 
     public void send(Object message) {
         try {
-            this.session.getBasicRemote().sendObject(message);
+            if(message !=null) {
+                session.getBasicRemote().sendObject(message);
+            }
         } catch(Exception ex) {
             ex.printStackTrace();
         }
